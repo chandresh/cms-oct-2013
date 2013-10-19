@@ -1,6 +1,8 @@
 Cms::Application.routes.draw do
   get "admin/dashboard"
   root 'welcome#index'
+  resources :pages
+
 
   get 'admin' => 'admin#dashboard', as: :admin
 
@@ -38,7 +40,7 @@ Cms::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
