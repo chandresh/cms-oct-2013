@@ -1,5 +1,8 @@
 require 'rubygems'
 require 'spork'
+require_relative 'auth_helper'
+require_relative 'auth_request_helper'
+
 #uncomment the following line to use spork with the debugger
 #require 'spork/ext/ruby-debug'
 
@@ -32,6 +35,8 @@ Spork.prefork do
     # config.mock_with :flexmock
     # config.mock_with :rr
     config.include Capybara::DSL
+    config.include AuthRequestHelper, :type => :request
+    config.include AuthHelper, :type => :controller
 
     # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
     config.fixture_path = "#{::Rails.root}/spec/fixtures"
