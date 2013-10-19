@@ -16,5 +16,12 @@ describe "AdminPage", :type => :feature do
     end
   end
 
+  describe "Dashboard page" do
+    it "should have a link to manage pages" do
+      http_login('cp', 'secret')
+      visit admin_path
+      expect(page).to have_css('a#manage_pages')
+    end
+  end
 
 end
