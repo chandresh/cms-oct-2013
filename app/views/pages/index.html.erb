@@ -8,7 +8,7 @@
       <tr>
         <td><%= page.name %></td>
         <td><%= page.title %></td>
-        <td>Edit | Delete</td>
+        <td><%= link_to "Edit", edit_page_path(page) %> | Delete</td>
       </tr>
   <% end %>
 </table>

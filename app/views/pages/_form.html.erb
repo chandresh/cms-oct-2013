@@ -1,0 +1,13 @@
+<%= form_for @page do |form| %>
+    <p>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </p>
+
+    <p>
+      <%= form.label :title %>
+      <%= form.text_field :title %>
+    </p>
+
+    <%= form.submit "Save" %>
+<% end %>

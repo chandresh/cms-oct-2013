@@ -2,6 +2,7 @@ Cms::Application.routes.draw do
   get "admin/dashboard"
   root 'welcome#index'
   resources :pages
+  resources :products
 
 
   get 'admin' => 'admin#dashboard', as: :admin

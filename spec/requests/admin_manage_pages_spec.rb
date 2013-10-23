@@ -31,4 +31,35 @@ describe "Manage Pages", :type => :feature do
     end
   end
 
+  describe "edit page" do
+    it "should update the page" do
+
+      # setup
+      visit_admin_path
+
+      Page.create(name: "home")
+      Page.create(name: "about")
+
+      find_link('Manage Pages').click
+
+      # click on the first edit link
+
+      click_link('Edit', match: :first)
+
+      # test that we are on correct page
+
+      expect(page).to have_content("Edit page")
+
+      # Fill the form
+
+      fill_in 'Name', with: "Something else"
+      fill_in 'Title', with: "Something else"
+      click_on('Save')
+
+      # test - output
+
+      expect(page).to have_content("Something else")
+    end
+  end
+
 end
