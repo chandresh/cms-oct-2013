@@ -2,12 +2,14 @@
   <tr>
     <th>Name</th>
     <th>Price</th>
+    <th>Photo</th>
 
   </tr>
   <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
         <td><%= product.price %></td>
+        <td><%= image_tag product.photo.url %></td>
       </tr>
   <% end %>
 </table>
